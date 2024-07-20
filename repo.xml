@@ -1,0 +1,14 @@
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>csAPI</description>
+    <author>Stefan Dumont</author>
+    <website/>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>library</type>
+    <target>csAPI</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <permissions user="admin" group="dba" mode="rwxr-xr-x"/>
+<deployed>2021-06-12T09:29:45.115+02:00</deployed>
+</meta>

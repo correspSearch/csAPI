@@ -1,0 +1,14 @@
+{
+    "visualDates": {
+        "nested": {"path": "dates"},
+        "aggs": {
+            "date_histogram": {
+                "date_histogram": {
+                    "field": "dates.start",
+                    "interval": "year",
+                    "format": "yyyy"
+                }
+            }
+        }
+    }
+}

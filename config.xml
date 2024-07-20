@@ -1,0 +1,27 @@
+<correspSearch>
+    <config>
+        <!-- Path in eXist database to correspSearch folder -->
+        <dbbasepath>/db/apps/csAPI</dbbasepath>
+        <cmif-files>/db/apps/csHarvester/data/cmif-files</cmif-files>
+<!--        <cmif-files>/db/projects/correspSearch/data</cmif-files>-->
+    </config>
+    <beacons>
+        <!-- register CMI files URLs here -->
+        <!-- <beacon url="http://tei.ibi.hu-berlin.de/berliner-intellektuelle/beacon-correspDesc.xml" id="BTIB"/>
+        <beacon url="http://weber-gesamtausgabe.de/correspDesc.xml" id="WEGA"/>
+        <beacon url="http://correspSearch.bbaw.de/storage/bucer1-15.xml" id="BUCER1-15" />
+        <beacon url="http://correspSearch.bbaw.de/storage/fannyLewald.xml" id="FLHH" />
+        <beacon url="http://correspSearch.bbaw.de/storage/Soemmerring1792-1805.xml" id="SOE20" /> 
+        <beacon url="http://correspSearch.bbaw.de/storage/Varnhagen_Fouque.xml" id="VFM" /> -->
+    </beacons>
+    <web>
+        <!-- web baseurl for api -->
+        <!-- <baseurl>https://correspsearch.net/</baseurl> -->
+        <baseurl>https://correspsearch.net/</baseurl>
+    </web>
+    <api>
+        <apikeys>
+            <apikey owner="beta1">wqMq9YukGfH9Wq</apikey>
+        </apikeys>
+    </api>
+</correspSearch>

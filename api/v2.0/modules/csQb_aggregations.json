@@ -1,0 +1,235 @@
+{
+    "names": {
+        "nested": {"path": "names"},
+        "aggs": {
+            "names_list": {
+                "terms": {
+                    "field": "names.canonical_ref",
+                    "size": 1000000
+                },
+                "aggs": {
+                    "canonical_ref": {
+                        "top_hits": {
+                            "size": 1,
+                            "_source": {
+                                "include": [
+                                    "names.canonical_ref",
+                                    "names.canonical_name"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "namesRoles": {
+        "nested": {"path": "names"},
+        "aggs": {
+            "actions": {
+                "multi_terms": {
+                    "terms": [
+                        {"field": "names.canonical_name.keyword"},
+                        {"field": "names.canonical_ref"},
+                        {"field": "names.action"}
+                    ],
+                    "size": 1000000
+                }
+            }
+        }
+    },
+    "occupations": {
+        "nested": {"path": "names.occupations"},
+        "aggs": {
+            "occupations_list": {
+                "terms": {
+                    "field": "names.occupations.canonical_ref",
+                    "size": 10000
+                },
+                "aggs": {
+                    "ref": {
+                        "top_hits": {
+                            "size": 1,
+                            "_source": {
+                                "include": [
+                                    "names.occupations.canonical_ref",
+                                    "names.occupations.label_de_ungendered",
+                                    "names.occupations.label_en_ungendered"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "places": {
+        "nested": {"path": "places"},
+        "aggs": {
+            "places_list": {
+                "terms": {
+                    "field": "places.canonical_ref",
+                    "size": 10000
+                },
+                "aggs": {
+                    "ref": {
+                        "top_hits": {
+                            "size": 1,
+                            "_source": {
+                                "include": [
+                                    "places.canonical_ref",
+                                    "places.text",
+                                    "places.canonical_name_de",
+                                    "places.canonical_name_en",
+                                    "places.location",
+                                    "places.action"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "placesRoles": {
+        "nested": {"path": "places"},
+        "aggs": {
+            "actions": {
+                "multi_terms": {
+                    "terms": [
+                        {"field": "places.canonical_name_de.keyword"},
+                        {"field": "places.canonical_ref"},
+                        {"field": "places.action"}
+                    ],
+                    "size": 1000000
+                }
+            }
+        }
+    },
+    "available_full_text" : {
+        "terms" : {
+            "field": "full_text_available",
+            "size": 10000
+        }
+    },
+    "edition": {
+        "terms": {
+            "field": "source_text.keyword",
+            "size": 10000
+        },
+        "aggs": {
+            "id": {
+                "terms": {
+                    "field": "source_id",
+                    "size": 1
+                }
+            }
+        }
+    },
+    "cmif": {
+        "terms": {
+            "field": "cmif_title.keyword",
+            "size": 10000
+        },
+        "aggs": {
+            "idno": {
+                "terms": {
+                    "field": "cmif_idno",
+                    "size": 1
+                }
+            }
+        }
+    },
+    "datasets": {
+        "nested": {"path": "datasets"},
+        "aggs": {
+            "datasets_list": {
+                "terms": {
+                    "field": "datasets.ref",
+                    "size": 10000
+                },
+                "aggs": {
+                    "ref": {
+                        "top_hits": {
+                            "size": 1,
+                            "_source": {
+                                "include": [
+                                    "datasets.label_de",
+                                    "datasets.label_en",
+                                    "datasets.ref"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "availability": {
+        "terms": {
+            "field": "source_type",
+            "size": 10000
+        }
+    },
+    "gender": {
+        "nested": {"path": "names"},
+        "aggs": {
+            "gender_list": {
+                "terms": {
+                    "field": "names.gender",
+                    "size": 1000000
+                }
+            }
+        }
+    },
+    "dates": {
+        "nested": {"path": "dates"},
+        "aggs": {
+            "date_histogram": {
+                "date_histogram": {
+                    "field": "dates.start",
+                    "interval": "year",
+                    "min_doc_count": 1,
+                    "format": "yyyy"
+                }
+            }
+        }
+    },
+    "visualDates": {
+        "nested": {"path": "dates"},
+        "aggs": {
+            "date_histogram": {
+                "date_histogram": {
+                    "field": "dates.start",
+                    "interval": "year",
+                    "format": "yyyy"
+                }
+            }
+        }
+    },
+    "languages": {
+        "nested": {"path": "languages"},
+        "aggs": {
+            "languages_list": {
+                "terms": {
+                    "field": "languages.ref",
+                    "size": 10000
+                },
+                "aggs": {
+                    "ref": {
+                        "top_hits": {
+                            "size": 1,
+                            "_source": {
+                                "include": [
+                                    "languages.ref",
+                                    "languages.label_de",
+                                    "languages.label_en"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

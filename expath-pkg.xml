@@ -1,0 +1,4 @@
+<package xmlns="http://expath.org/ns/pkg" name="http://correspSearch.net/apps/csAPI" abbrev="csAPI" version="0.2" spec="1.0">
+    <title>csAPI</title>
+    <dependency package="http://exist-db.org/apps/shared"/>
+</package>

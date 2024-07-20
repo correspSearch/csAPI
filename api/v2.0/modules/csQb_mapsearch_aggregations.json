@@ -1,0 +1,32 @@
+{
+	"places": {
+		"nested": {
+			"path": "places"
+		},
+		"aggs": {
+			"places_list": {
+				"terms": {
+					"field": "places.canonical_ref",
+					"size": 10000
+				},
+				"aggs": {
+					"ref": {
+						"top_hits": {
+							"size": 1,
+							"_source": {
+								"include": [
+									"places.canonical_ref",
+									"places.text",
+									"places.canonical_name_de",
+									"places.canonical_name_en",
+									"places.location",
+									"places.action"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
