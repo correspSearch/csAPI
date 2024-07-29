@@ -1,6 +1,6 @@
 # csAPI
 
-APIs for the webservice [correspSearch](https://correspsearch.net/de/start.html)
+APIs for the webservice [correspSearch](https://correspsearch.net/de/start.html). This module also includes the functionalities of "CMIF Check" and "CMIF Preview".
 
 ## Credits
 
