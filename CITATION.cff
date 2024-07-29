@@ -1,0 +1,17 @@
+message: "If you use this software, please cite it using the metadata in the CFF file."
+authors:
+  - family-names: Dumont
+    given-names: Stefan
+    orcid: "http://orcid.org/0000-0002-6923-0950"
+title: csAPI - API for correspSearch 
+abstract: "This module includes all APIs to retrieve the data from correspSearch"
+type: software
+date-released: "2024"
+version: 3.0.0
+repository-code: "https://github.com/correspSearch/csAPI"
+license: "LGPL-3.0"
+url: "https://correspsearch.net/en/api.html"
+contact:
+  - email: correspSearch@bbaw.de
+    name: "correspSearch - Connecting Scholarly Editions of Correspondence"
+cff-version: 1.2.0
